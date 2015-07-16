@@ -40,10 +40,17 @@ export default Ember.Controller.extend({
       var keywords = this.get("keywordsProxy");
       this.set("keywords", keywords);
       this.send("refreshpage", keywords);
+      var imgContainer = document.getElementById('results');
+      if(imgContainer.style.display === 'none') {
+        imgContainer.style.display = 'block';
+      }      
+
     },
 
     clear: function() {
-      Ember.$("#results").empty();
+      var imgContainer = document.getElementById('results');
+      imgContainer.style.display = 'none';
+      //Ember.$("#results").empty();
       Ember.$("#search-input").val("");
     }
 
