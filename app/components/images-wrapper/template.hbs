@@ -6,4 +6,10 @@
     {{photo-view author=image.author date=image.date_taken link=image.media.m tags=image.item.tags}}
   {{/each}}
 
+{{else}}
+
+    {{#if link}}
+    <span><h4 class="col-md-6"><strong>No images found.</strong></h4></span>
+    {{/if}}
+    
 {{/if}}

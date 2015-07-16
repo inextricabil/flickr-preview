@@ -1,5 +1,10 @@
 import Ember from 'ember';
 
+Ember.$("#search").keyup(function(event){
+    if(event.keyCode === 13){
+        Ember.$("#search").click();
+    }
+});
 export default Ember.Route.extend({
   queryParams: {
     keywords: {
@@ -22,5 +27,15 @@ export default Ember.Route.extend({
       tagmode: "any",
       format: "json"
     });
+  },
+  actions: {
+    refreshpage: function (keywords){
+      var self = this;
+      this._getPhotosByKeyword(keywords).then(
+        function(data) {
+          self.controller.set("model", data);
+        }
+      );
+    }
   }
 });

@@ -37,7 +37,9 @@ export default Ember.Controller.extend({
   }),
   actions: {
     search: function() {
-      this.set("keywords", this.get("keywordsProxy"));
+      var keywords = this.get("keywordsProxy");
+      this.set("keywords", keywords);
+      this.send("refreshpage", keywords);
     },
 
     clear: function() {

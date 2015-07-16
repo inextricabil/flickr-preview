@@ -25,7 +25,7 @@ module.exports = function(environment) {
     'script-src': "'self' http://api.flickr.com http://localhost:4200",
     'font-src': "'self'",
     'connect-src': "'self'",
-    'img-src': "'self'",
+    'img-src': "'self' http://farm1.staticflickr.com http://farm2.staticflickr.com http://farm3.staticflickr.com http://farm4.staticflickr.com http://farm5.staticflickr.com http://farm6.staticflickr.com http://farm7.staticflickr.com http://farm8.staticflickr.com http://farm9.staticflickr.com",
     'style-src': "'self'",
     'media-src': "'self'"
   };
