@@ -1,10 +1,5 @@
 import Ember from 'ember';
 
-Ember.$("#search").keyup(function(event){
-    if(event.keyCode === 13){
-        Ember.$("#search").click();
-    }
-});
 export default Ember.Route.extend({
   queryParams: {
     keywords: {

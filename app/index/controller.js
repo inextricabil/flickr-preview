@@ -44,6 +44,9 @@ export default Ember.Controller.extend({
 
     clear: function() {
       Ember.$("#results").empty();
+      Ember.$("#search-input").val("");
     }
+
+
   }
 });
