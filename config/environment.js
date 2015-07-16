@@ -22,9 +22,9 @@ module.exports = function(environment) {
   if (environment === 'development') {
     ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'script-src': "'self' http://api.flickr.com",
+    'script-src': "'self' http://api.flickr.com http://localhost:4200",
     'font-src': "'self'",
-    'connect-src': "'self' http://localhost:4000",
+    'connect-src': "'self'",
     'img-src': "'self'",
     'style-src': "'self'",
     'media-src': "'self'"
