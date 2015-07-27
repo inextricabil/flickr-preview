@@ -43,7 +43,7 @@ export default Ember.Controller.extend({
       var imgContainer = document.getElementById('results');
       if(imgContainer.style.display === 'none') {
         imgContainer.style.display = 'block';
-      }      
+      }
 
     },
 

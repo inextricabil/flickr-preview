@@ -8,14 +8,11 @@
         </span>
         {{input id ="search-input" type="text" insert-newline='search' class="form-control input-lg" placeholder="Type your keywords here..." value=keywordsProxy}}
         <span class="input-group-btn">
-          <button {{action 'search' }} class="btn btn-info btn-lg" type="button" >Search</button>
+          <button {{action 'search' }} class="btn btn-info btn-lg center-block" type="button" >Search</button>
         </span>
       </div>
     </div>
   </div>
   <div id = "results" class='container'>
-    <!-- {{#modal-dialog}}
-      Oh hai there!
-    {{/modal-dialog}} -->
     {{images-wrapper link=model.link date=model.modified numberOfPics=model.items.length picsArray = model.items}}
   </div>
