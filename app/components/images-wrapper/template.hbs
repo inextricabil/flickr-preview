@@ -3,15 +3,14 @@
   <h4 class="col-lg-5 col-sm-6 text-center"><strong>Link:</strong> <a href={{link}}>{{link}}</a></h4>
   <h4 class="col-lg-4 col-sm-6 text-center"><strong>Modified:</strong> {{date}}</h4>
   {{#each picsArray as |image|}}
-    {{photo-view author=image.author date=image.date_taken link=image.media.m tags=image.item.tags}}
+    {{photo-view author=image.author date=image.date_taken link=image.media.m tags=image.items.tags}}
   {{/each}}
+
 
 {{else}}
 
     {{#if link}}
-    <span><h4 class="col-md-6"><strong>No images found.</strong></h4></span>
+      <span><h4 class="col-md-6"><strong>No images found.</strong></h4></span>
     {{/if}}
 
 {{/if}}
-
-{{outlet "modal"}}

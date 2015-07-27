@@ -1,15 +1,40 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  actions: {
-    ok: function() {
-    this.$('.modal').modal('hide');
-    this.sendAction('ok');
+
+
+  show: function() {
+    this.$('.modal').modal().on('hidden.bs.modal', function() {
+    }.bind(this));
+  }.on('didInsertElement'),
+
+   actions: {
+
+    closeModal: function () {
+      $('.modal').modal('hide')
+    }
+
   }
-},
-show: function() {
-  this.$('.modal').modal().on('hidden.bs.modal', function() {
-    this.sendAction('close');
-  }.bind(this));
-}.on('didInsertElement')
-  });
+});
+
+
+ // CENTER THE MODAL //
+
+(function ($) {
+    "use strict";
+    function centerModal() {
+        $(this).css('display', 'block');
+        var $dialog  = $(this).find(".modal-dialog"),
+        offset       = ($(window).height() - $dialog.height()) / 2,
+        bottomMargin = parseInt($dialog.css('marginBottom'), 10);
+
+        // Make sure you don't hide the top part of the modal w/ a negative margin if it's longer than the screen height, and keep the margin equal to the bottom margin of the modal
+        if(offset < bottomMargin) offset = bottomMargin;
+        $dialog.css("margin-top", offset);
+    }
+
+    $(document).on('show.bs.modal', '.modal', centerModal);
+    $(window).on("resize", function () {
+        $('.modal:visible').each(centerModal);
+    });
+}(jQuery));

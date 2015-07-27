@@ -3,18 +3,13 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    showModal: function(name, model) {
-      this.render(name, {
-        into: 'application',
-        outlet: 'modal',
-        model: model
-      });
+    openModal: function () {
+      $('.modal').modal('show');
+      this.set("showModal", true);
     },
-    removeModal: function() {
-      this.disconnectOutlet({
-        outlet: 'modal',
-        parentView: 'application'
-      });
+
+    close: function () {
+      this.set('showModal', false);
     }
-}
+  }
 });

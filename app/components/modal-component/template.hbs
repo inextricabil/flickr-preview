@@ -1,20 +1,29 @@
+<!-- Require {{author}} , {{date}}, {{link}}, {{tags}} -->
+
 <div class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
 
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 style='text-align: center;' class="modal-title">{{author}}</h4>
+        <button type="button" class="close" {{action 'closeModal'}} aria-hidden="true">&times;</button>
+        <h4 style='text-align: center;' class="modal-title">Author: <strong>{{author}}</strong></h4>
       </div>
 
       <div class="modal-body">
         <p style='text-align: center;'>Date: <strong>{{date}}</strong></p>
-        <p style='text-align: center;'><img src="{{link}}" alt="Image"></p>
-        <p style='text-align: center;'>Tags: <strong>{{tags}}</strong></p>
+        <p style='text-align: center;'><img style = 'background-size: auto 100%;'src="{{link}}" alt="Image" ></p>
+
+          {{#if tags}}
+          <p style='text-align: center;'> Tags: <strong>{{tags}}</strong> </p>
+          {{/if}}
+
+
+
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary center-block" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-lg center-block" {{action 'closeModal'}}>Close</button>
+        <!-- <button type="button" class="btn btn-primary btn-lg center-block" data-dismiss="modal">Close</button> -->
       </div>
 
     </div>
