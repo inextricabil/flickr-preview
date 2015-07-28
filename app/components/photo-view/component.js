@@ -7,6 +7,7 @@ export default Ember.Component.extend({
 
       Ember.$('.modal').modal('show');
       this.set("showModal", true);
+      this.set('siteURL', 'http://localhost:4200/');                                                      // site URL for IMGS LINKS
     },
     closeModal: function() {
         this.set("showModal", false);

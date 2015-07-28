@@ -51,7 +51,16 @@ export default Ember.Controller.extend({
       /// array
       flickrobj.items[i].tags = flickrobj.items[i].tags.split(" ");
 
+      for (var j = 0; j < flickrobj.items[i].tags.length; j++) {
+        flickrobj.items[i].tags[j] = flickrobj.items[i].tags[j].substring(0, 70); //max tag length
+      }
+
+
     }
+
+
+
+
     console.log(flickrobj);
 
 
