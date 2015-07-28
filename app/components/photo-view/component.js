@@ -3,13 +3,14 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    openModal: function () {
-      $('.modal').modal('show');
+    openModal: function() {
+      Ember.$('.modal').modal('show');
       this.set("showModal", true);
-    },
-
-    close: function () {
-      this.set('showModal', false);
     }
+
+    // close: function() {
+    //   Ember.$('.modal').modal('hide');
+    //   this.set("showModal".false);
+    // }
   }
 });
