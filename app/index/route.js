@@ -19,8 +19,10 @@ export default Ember.Route.extend({
     }
     return Ember.$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
       tags: keywords,
+      limit   : '20',
       tagmode: "any",
-      format: "json"
+      format: "json",
+      lang    : 'en-us'
     });
   },
   actions: {

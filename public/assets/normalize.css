@@ -28,3 +28,7 @@
   width: 100%;
   text-align: center;
 }
+
+.autoModal.modal .modal-body{
+    max-height: 100%;
+}

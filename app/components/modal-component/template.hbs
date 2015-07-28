@@ -16,16 +16,24 @@
           <strong>{{date}}</strong>
         </p>
         <p style='text-align: center;'>
-          <img style='background-size: auto 100%;' src="{{link}}" alt="Image">
+          <img style='background-size: auto 100%; width : 100%;' src="{{link}}" alt="Image">
         </p>
 
-        {{#if tags}}
+        <!-- {{#if tags}}
           <p style='text-align: center;'> Tags:
             <strong>{{tags}}</strong>
           </p>
-        {{/if}}
+        {{/if}} -->
+        <p style='text-align: center;'> Tags:
+          {{#each tag in tags}}
+            <a href="http://localhost:4200/?keywords={{tag}}">
+              <strong>#{{tag}}</strong>
+            </a>
 
-
+            {{else}}
+              <strong>Sorry, no tags defined.</strong>
+          {{/each}}
+        </p>
 
       </div>
 
